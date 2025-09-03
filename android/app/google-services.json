@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "679013999464",
+    "project_id": "pintar-care-v3-5f8c4",
+    "storage_bucket": "pintar-care-v3-5f8c4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679013999464:android:53fbf0a7e275530457acdd",
+        "android_client_info": {
+          "package_name": "com.buf.pintar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW2XRLk1sjTgcD-1KU7FF4IF6B-7NXcq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679013999464:android:0fbcfc1a7a7bfe4357acdd",
+        "android_client_info": {
+          "package_name": "com.buf.pintarr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW2XRLk1sjTgcD-1KU7FF4IF6B-7NXcq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

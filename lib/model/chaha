@@ -1,0 +1,34 @@
+static List<ChecklistItem>? check(String data) {
+    switch (data) {
+      case AcType.ahu:
+        return ahu;
+      case AcType.fcu:
+        return fcu;
+      case AcType.cas:
+        return fcu;
+      case AcType.pre:
+        return fcu;
+      case AcType.fan:
+        return fan;
+      case AcType.ct:
+        return ct;
+      case AcType.chill:
+        return chill;
+      case AcType.con:
+        return con;
+      case AcType.chi:
+        return chi;
+      case AcType.split:
+        return split;
+      case AcType.deh:
+        return deh;
+      case AcType.chik:
+        return split;
+      case AcType.frek:
+        return split;
+      case AcType.waste:
+        return split;
+      default:
+        return null;
+    }
+  }

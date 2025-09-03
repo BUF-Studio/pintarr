@@ -1,0 +1,71 @@
+ Future<String> addChecklist(Checklist checklist) async {
+    String id = await converter(
+      path: APIPath.checklists(cid),
+      data: checklist.toMap(update: true),
+      func: Func.add,
+    );
+    // if (win) _checklistStream.update(cid);
+    return id;
+  }
+
+  Future<void> setChecklist(Checklist checklist, {bool delete = false}) async {
+    await converter(
+      path: APIPath.checklist(cid, checklist.id),
+      data: checklist.toMap(update: delete ? false : true, del: delete),
+      func: Func.sett,
+    );
+    // if (win) _checklistStream.update(cid);
+  }
+
+  // Future<void> deleteChecklist(String uid) async {
+  //   await converter(path: APIPath.checklist(cid, uid), func: Func.delete);
+  //   // if (win) _checklistStream.update(uid);
+  // }
+
+  // Stream<List<Checklist?>?> checklistsStream(String cid) {
+  //   if (win) {
+  //     _checklistStream.update(cid);
+  //     return _checklistStream.stream;
+  //   } else {
+  //     return _service.collectionStream(
+  //       path: APIPath.checklists(cid),
+  //       builder: (data, id) => Checklist.fromMap(data, id),
+  //     );
+  //   }
+  // }
+
+  Future<List<Checklist>> getUpdateChecklists(Timestamp lastUpdate) {
+    if (win) {
+      // _checklistStream.update(uid);
+      return _real.collectionStream(
+          path: APIPath.checklists(cid),
+          builder: (data, id) => Checklist.fromMap(data, id),
+          queryBuilder: (query) =>
+              query.where('lastUpdate', isGreaterThanOrEqualTo: lastUpdate));
+    } else {
+      return _service.getCollection(
+          path: APIPath.checklists(cid),
+          builder: (data, id) => Checklist.fromMap(data, id),
+          queryBuilder: (query) =>
+              query.where('lastUpdate', isGreaterThanOrEqualTo: lastUpdate));
+    }
+  }
+
+  Future<List<Checklist>> getDeleteChecklists(Timestamp lastDelete) {
+    if (win) {
+      // _checklistStream.update(uid);
+      return _real.collectionStream(
+        path: APIPath.checklists(cid),
+        builder: (data, id) => Checklist.fromMap(data, id),
+        queryBuilder: (query) =>
+            query.where('delete', isGreaterThan: lastDelete),
+      );
+    } else {
+      return _service.getCollection(
+        path: APIPath.checklists(cid),
+        builder: (data, id) => Checklist.fromMap(data, id),
+        queryBuilder: (query) =>
+            query.where('delete', isGreaterThan: lastDelete),
+      );
+    }
+  }
