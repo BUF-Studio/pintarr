@@ -1,9 +1,6 @@
-import 'dart:io';
 
 // import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:pintarr/model/type.dart';
-import 'package:pintarr/model/unit.dart';
 
 class ImportFile {
   static Future<String?> choose() async {
@@ -33,6 +30,7 @@ class ImportFile {
       print('Error while picking the file: $e');
       return null;
     }
+    return null;
   }
 
   readUnit(loc) async {

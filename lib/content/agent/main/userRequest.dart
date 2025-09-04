@@ -11,7 +11,7 @@ import 'package:pintarr/widget/tile.dart';
 import 'package:provider/provider.dart';
 
 class UserRequest extends StatelessWidget {
-  const UserRequest({Key? key}) : super(key: key);
+  const UserRequest({super.key});
 
   @override
   Widget build(BuildContext context) {

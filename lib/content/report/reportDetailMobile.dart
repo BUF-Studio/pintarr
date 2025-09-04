@@ -4,7 +4,6 @@ import 'package:pintarr/content/report/viewReport.dart';
 import 'package:pintarr/content/unit/detail/unitDetailMobile.dart';
 import 'package:pintarr/model/report.dart';
 import 'package:pintarr/model/unit.dart';
-import 'package:pintarr/service/controller/unitController.dart';
 import 'package:provider/provider.dart';
 import 'package:collection/collection.dart';
 

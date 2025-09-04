@@ -16,20 +16,15 @@ class Content extends StatelessWidget {
     switch (navi.page) {
       case AfterPages.dashboard:
         return DashboardPage();
-        break;
       case AfterPages.report:
         return ReportPage();
-        break;
       case AfterPages.unit:
         // if (Responsive.isMobile(context)) return UnitMobile();
         return UnitPage();
-        break;
       case AfterPages.user:
         return AgentPage();
-        break;
       case AfterPages.setting:
         return Setting();
-        break;
     }
   }
 }

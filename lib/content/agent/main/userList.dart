@@ -3,7 +3,6 @@ import 'package:pintarr/color.dart';
 import 'package:pintarr/model/agent.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/service/fire/database.dart';
-import 'package:pintarr/service/stream/agentsStream.dart';
 import 'package:pintarr/widget/alert.dart';
 import 'package:pintarr/widget/empty.dart';
 import 'package:pintarr/widget/pageList.dart';
@@ -11,7 +10,7 @@ import 'package:pintarr/widget/tile.dart';
 import 'package:provider/provider.dart';
 
 class UserList extends StatelessWidget {
-  const UserList({Key? key}) : super(key: key);
+  const UserList({super.key});
 
   @override
   Widget build(BuildContext context) {

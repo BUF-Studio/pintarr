@@ -54,8 +54,7 @@ class Title extends StatelessWidget {
   final String? subtitle;
   final void Function()? refresh;
   final Widget? sub;
-  const Title({Key? key, this.title, this.sub, this.refresh, this.subtitle})
-      : super(key: key);
+  const Title({super.key, this.title, this.sub, this.refresh, this.subtitle});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -96,7 +95,7 @@ class Title extends StatelessWidget {
 
 class Refresh extends StatelessWidget {
   final void Function()? func;
-  const Refresh(this.func, {Key? key}) : super(key: key);
+  const Refresh(this.func, {super.key});
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -108,7 +107,7 @@ class Refresh extends StatelessWidget {
 
 class Back extends StatelessWidget {
   final void Function()? onTap;
-  const Back(this.onTap, {Key? key}) : super(key: key);
+  const Back(this.onTap, {super.key});
   @override
   Widget build(BuildContext context) {
     return InkWell(

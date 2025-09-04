@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pintarr/content/dashboard/clientProfileMobile.dart';
 import 'package:pintarr/content/dashboard/livePage.dart';
@@ -8,7 +7,6 @@ import 'package:pintarr/content/unit/main/searchUnit.dart';
 import 'package:pintarr/model/agent.dart';
 import 'package:pintarr/model/checklist.dart';
 import 'package:pintarr/model/checklistItem.dart';
-import 'package:pintarr/model/checklistV2.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/model/report.dart';
 import 'package:pintarr/model/type.dart';
@@ -248,10 +246,7 @@ class Dashboard extends StatelessWidget {
         //           des: 'Check pipe and insulation',
         //           pass: true,
         //         ),
-        //         ChecklistItem(
-        //           des: 'Check operation of exhaust fan',
-        //           pass: true,
-        //         ),
+               
         //         ChecklistItem(
         //           des: 'Check signs of water leaks',
         //           pass: true,
@@ -274,7 +269,7 @@ class Dashboard extends StatelessWidget {
         //       ];
 
         //       List<Checklist> checklists = [
-        //         Checklist(type: [AcType.air], item: air, version: 2),
+        //         Checklist(type: [AcType.air], item: air, version: 3),
         //       ];
 
         //       for (Checklist c in checklists) {

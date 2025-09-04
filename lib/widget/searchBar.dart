@@ -9,7 +9,6 @@ import 'package:pintarr/content/unit/detail/unitDetailMobile.dart';
 import 'package:pintarr/content/unit/unitPage.dart';
 import 'package:pintarr/model/unit.dart';
 import 'package:pintarr/qr/scanPage.dart';
-import 'package:pintarr/service/controller/unitController.dart';
 import 'package:pintarr/service/importFile.dart';
 import 'package:pintarr/widget/alert.dart';
 import 'package:pintarr/widget/responsive.dart';

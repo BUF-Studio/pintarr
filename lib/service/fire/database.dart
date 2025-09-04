@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firedart/firedart.dart' as f;
 import 'package:pintarr/model/agent.dart';
 import 'package:pintarr/model/checklist.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/model/report.dart';
-import 'package:pintarr/model/type.dart';
 import 'package:pintarr/model/unit.dart';
 import 'package:pintarr/service/fire/api_path.dart';
 import 'package:pintarr/service/fire/firestore_service.dart';

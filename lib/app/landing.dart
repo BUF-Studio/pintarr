@@ -17,7 +17,7 @@ class Landing extends StatelessWidget {
 
 
     return snapshot.hasData
-        ? LoginLanding(ver.ver)
+        ? LoginLanding()
         : Scaffold(
             body: Safe(
               child: BeforePage(),

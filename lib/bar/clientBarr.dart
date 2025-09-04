@@ -5,16 +5,12 @@ import 'package:pintarr/content/unit/unitPage.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/service/clientBloc.dart';
 import 'package:pintarr/service/fire/database.dart';
-import 'package:pintarr/service/stream/clientStream.dart';
-import 'package:pintarr/service/stream/clientsStream.dart';
-import 'package:pintarr/service/stream/reportStream.dart';
-import 'package:pintarr/service/stream/unitStream.dart';
 import 'package:pintarr/widget/responsive.dart';
 import 'package:pintarr/widget/tile.dart';
 import 'package:provider/provider.dart';
 
 class ClientBar extends StatelessWidget {
-  const ClientBar({Key? key}) : super(key: key);
+  const ClientBar({super.key});
 
   // final List<Client> client = [
   //   Client(name: 'pintar'),

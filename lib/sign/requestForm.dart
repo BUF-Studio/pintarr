@@ -4,8 +4,6 @@ import 'package:pintarr/model/client.dart';
 import 'package:pintarr/service/fire/auth.dart';
 import 'package:pintarr/service/fire/database.dart';
 import 'package:pintarr/service/load.dart';
-import 'package:pintarr/service/stream/agentStream.dart';
-import 'package:pintarr/service/stream/clientsStream.dart';
 import 'package:pintarr/widget/alert.dart';
 import 'package:pintarr/widget/button.dart';
 import 'package:pintarr/widget/textBox.dart';

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pintarr/model/check.dart';
-import 'package:pintarr/model/checklistV2.dart';
 import 'package:pintarr/service/controller/checklistController.dart';
 import 'package:provider/provider.dart';
 

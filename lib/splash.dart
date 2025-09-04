@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Splash extends StatelessWidget {
-  const Splash({Key? key}) : super(key: key);
+  const Splash({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class Splash extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
+          SizedBox(
             height: 300,
             width: 300,
             child: Image.asset('assets/pintarCare.png'),

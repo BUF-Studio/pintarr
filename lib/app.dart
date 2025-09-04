@@ -18,7 +18,6 @@ import 'package:pintarr/service/controller/reportController.dart';
 import 'package:pintarr/service/controller/unitController.dart';
 import 'package:pintarr/service/fire/auth.dart';
 import 'package:pintarr/service/fire/database.dart';
-import 'package:pintarr/service/fire/firestore_service.dart';
 import 'package:pintarr/service/fire/preference.dart';
 import 'package:pintarr/service/load.dart';
 import 'package:pintarr/service/veri.dart';
@@ -28,7 +27,7 @@ import 'package:pintarr/widget/rightShift.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class App extends StatelessWidget {
       // await Future.delayed(Duration(milliseconds: 1));
     }
 
-    ok()async{}
+    ok() async {}
 
     return FutureBuilder(
       future: win ? init() : ok(),
@@ -154,13 +153,12 @@ class App extends StatelessWidget {
                       //   ),
                       // ),
                       theme: ThemeData(
-                        colorScheme: ColorScheme.fromSeed(
-                          seedColor: darkBlue,
+                        useMaterial3: false, // 👈 Force Material 2 look
+                        primaryColor: darkBlue,
+                        colorScheme: ColorScheme.fromSwatch().copyWith(
                           primary: darkBlue,
                           secondary: lightBlue,
-                          // surface: Colors.grey[100],
                         ),
-                        useMaterial3: true,
                         appBarTheme: const AppBarTheme(
                           backgroundColor: darkBlue,
                           systemOverlayStyle: SystemUiOverlayStyle(
@@ -172,11 +170,11 @@ class App extends StatelessWidget {
                             color: Colors.white,
                             fontSize: 20.0,
                             fontWeight: FontWeight.w500,
-                            textBaseline: TextBaseline.alphabetic,
                             letterSpacing: 0.15,
                           ),
                         ),
                       ),
+
                       // home: After(),
                     ),
                   ),

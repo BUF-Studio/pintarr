@@ -5,8 +5,6 @@ import 'package:pintarr/content/report/reportPage.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/model/report.dart';
 import 'package:pintarr/model/unit.dart';
-import 'package:pintarr/service/controller/checklistController.dart';
-import 'package:pintarr/service/controller/unitController.dart';
 import 'package:pintarr/service/format.dart';
 import 'package:pintarr/service/pdf.dart';
 import 'package:pintarr/widget/alert.dart';

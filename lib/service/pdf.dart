@@ -5,16 +5,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:pintarr/model/check.dart';
 import 'package:pintarr/model/checklist.dart';
 import 'package:pintarr/model/checklistItem.dart';
-import 'package:pintarr/model/checklistV2.dart';
 import 'package:pintarr/model/report.dart';
 import 'package:pintarr/model/reportType.dart';
 import 'package:pintarr/model/type.dart';
 import 'package:pintarr/model/unit.dart';
 import 'package:pintarr/service/controller/checklistController.dart';
-import 'package:pintarr/service/fire/database.dart';
 import 'package:pintarr/service/format.dart';
 
 class Pdf {
@@ -124,10 +121,7 @@ class Pdf {
       height: double.infinity,
       width: double.infinity,
       child: qr == ''
-          ? Container(
-              height: double.infinity,
-              width: double.infinity,
-            )
+          ? Container(height: double.infinity, width: double.infinity)
           : Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -140,12 +134,7 @@ class Pdf {
                       child: SvgImage(svg: logo),
                     ),
                     SizedBox(width: 20),
-                    Text(
-                      'PINTAR CARE',
-                      style: TextStyle(
-                        fontSize: height / 8,
-                      ),
-                    ),
+                    Text('PINTAR CARE', style: TextStyle(fontSize: height / 8)),
                   ],
                 ),
                 BarcodeWidget(
@@ -159,12 +148,14 @@ class Pdf {
                     Text(
                       'Unitname : ' + unit,
                       style: TextStyle(
-                          fontSize: (height / 16) > 8 ? (height / 16) : 8),
+                        fontSize: (height / 16) > 8 ? (height / 16) : 8,
+                      ),
                     ),
                     Text(
                       'Serial No. : ' + serial,
                       style: TextStyle(
-                          fontSize: (height / 16) > 8 ? (height / 16) : 8),
+                        fontSize: (height / 16) > 8 ? (height / 16) : 8,
+                      ),
                     ),
                   ],
                 ),
@@ -177,12 +168,10 @@ class Pdf {
     pdf.addPage(
       Page(
         pageFormat: PdfPageFormat.a4,
-        orientation:
-            count == 2 ? PageOrientation.landscape : PageOrientation.portrait,
-        theme: ThemeData.withFont(
-          base: Font.ttf(base),
-          bold: Font.ttf(bold),
-        ),
+        orientation: count == 2
+            ? PageOrientation.landscape
+            : PageOrientation.portrait,
+        theme: ThemeData.withFont(base: Font.ttf(base), bold: Font.ttf(bold)),
         build: (context) {
           switch (count) {
             case 1:
@@ -207,11 +196,23 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[0], unit[0], serial[0], 150.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[0],
+                            unit[0],
+                            serial[0],
+                            150.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[1], unit[1], serial[1], 150.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[1],
+                            unit[1],
+                            serial[1],
+                            150.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -219,11 +220,23 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[2], unit[2], serial[2], 150.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[2],
+                            unit[2],
+                            serial[2],
+                            150.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[3], unit[3], serial[3], 150.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[3],
+                            unit[3],
+                            serial[3],
+                            150.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -237,14 +250,32 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[0], unit[0], serial[0], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[0],
+                            unit[0],
+                            serial[0],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[1], unit[1], serial[1], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[1],
+                            unit[1],
+                            serial[1],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[2], unit[2], serial[2], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[2],
+                            unit[2],
+                            serial[2],
+                            80.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -252,14 +283,32 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[3], unit[3], serial[3], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[3],
+                            unit[3],
+                            serial[3],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[4], unit[4], serial[4], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[4],
+                            unit[4],
+                            serial[4],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[5], unit[5], serial[5], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[5],
+                            unit[5],
+                            serial[5],
+                            80.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -267,14 +316,32 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[6], unit[6], serial[6], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[6],
+                            unit[6],
+                            serial[6],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[7], unit[7], serial[7], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[7],
+                            unit[7],
+                            serial[7],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[8], unit[8], serial[8], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[8],
+                            unit[8],
+                            serial[8],
+                            80.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -282,14 +349,32 @@ class Pdf {
                     child: Row(
                       children: [
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[9], unit[9], serial[9], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[9],
+                            unit[9],
+                            serial[9],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[10], unit[10], serial[10], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[10],
+                            unit[10],
+                            serial[10],
+                            80.0,
+                          ),
+                        ),
                         Expanded(
-                            child: _qrContainer(
-                                logo, qr[11], unit[11], serial[11], 80.0)),
+                          child: _qrContainer(
+                            logo,
+                            qr[11],
+                            unit[11],
+                            serial[11],
+                            80.0,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -361,7 +446,7 @@ class Pdf {
       // _addChecklist(list, checklist, pdf, logo, base, bold);
     }
 
-// get
+    // get
     print('save');
     await save(pdf, name);
 
@@ -369,7 +454,13 @@ class Pdf {
   }
 
   _addCheckListPage(
-      pdf, logo, base, bold, Report report, List<ChecklistItem> checklist) {
+    pdf,
+    logo,
+    base,
+    bold,
+    Report report,
+    List<ChecklistItem> checklist,
+  ) {
     // var attach = [];
     // reports.forEach((e) {
     //   if (e.attachUrl != null) attach.add(e.attachUrl);
@@ -420,7 +511,7 @@ class Pdf {
     ];
 
     var data = [
-      ['No', 'Description', '']
+      ['No', 'Description', ''],
     ];
 
     int j = 1;
@@ -438,7 +529,11 @@ class Pdf {
 
         lis.add(ques);
         // lis.add(report.data[i]!);
-        lis.add(report.data[i]=='Pass'?'/':(report.data[i]=='Fail'?'X':report.data[i])!);
+        lis.add(
+          report.data[i] == 'Pass'
+              ? '/'
+              : (report.data[i] == 'Fail' ? 'X' : report.data[i])!,
+        );
         data.add(lis);
       }
     }
@@ -469,10 +564,7 @@ class Pdf {
       Page(
         pageFormat: PdfPageFormat.a4,
         orientation: PageOrientation.portrait,
-        theme: ThemeData.withFont(
-          base: Font.ttf(base),
-          bold: Font.ttf(bold),
-        ),
+        theme: ThemeData.withFont(base: Font.ttf(base), bold: Font.ttf(bold)),
         build: (context) {
           return Column(
             children: [
@@ -483,9 +575,7 @@ class Pdf {
               //   _serviceReportsTable(reports, checklist),
               Text(
                 'This is a computer generated document. No signature is required.',
-                style: const TextStyle(
-                  fontSize: 6,
-                ),
+                style: const TextStyle(fontSize: 6),
               ),
             ],
           );
@@ -498,10 +588,7 @@ class Pdf {
         Page(
           pageFormat: PdfPageFormat.a4,
           orientation: PageOrientation.portrait,
-          theme: ThemeData.withFont(
-            base: Font.ttf(base),
-            bold: Font.ttf(bold),
-          ),
+          theme: ThemeData.withFont(base: Font.ttf(base), bold: Font.ttf(bold)),
           build: (context) {
             return Column(
               children: [
@@ -524,21 +611,14 @@ class Pdf {
 
                 _commentBox(report.comment, height: (lin + 1) * 16.0),
                 SizedBox(height: 5),
-                Text(
-                  'Page 2 of 2',
-                  style: const TextStyle(
-                    fontSize: 6,
-                  ),
-                ),
+                Text('Page 2 of 2', style: const TextStyle(fontSize: 6)),
                 SizedBox(height: 5),
 
                 // if (!full && checklist != Checklist.chi)
                 //   _serviceReportsTable(reports, checklist),
                 Text(
                   'This is a computer generated document. No signature is required.',
-                  style: const TextStyle(
-                    fontSize: 6,
-                  ),
+                  style: const TextStyle(fontSize: 6),
                 ),
               ],
             );
@@ -549,7 +629,13 @@ class Pdf {
   }
 
   _addChillerPage(
-      pdf, logo, base, bold, Report report, List<ChecklistItem> checklist) {
+    pdf,
+    logo,
+    base,
+    bold,
+    Report report,
+    List<ChecklistItem> checklist,
+  ) {
     // var attach = [];
     // reports.forEach((e) {
     //   if (e.attachUrl != null) attach.add(e.attachUrl);
@@ -561,20 +647,13 @@ class Pdf {
     var loc = ['Location', report.location];
     var model = ['Model', report.model];
     var con = ['Unit Condition', report.current];
-    var detail = [
-      tag,
-      type,
-      serial,
-      loc,
-      model,
-      con,
-    ];
+    var detail = [tag, type, serial, loc, model, con];
 
     var checkdata = [
-      ['Description', '']
+      ['Description', ''],
     ];
     var readdata = [
-      ['Description', '']
+      ['Description', ''],
     ];
 
     // int j = 1;
@@ -625,32 +704,28 @@ class Pdf {
       Page(
         pageFormat: PdfPageFormat.a4,
         orientation: PageOrientation.portrait,
-        theme: ThemeData.withFont(
-          base: Font.ttf(base),
-          bold: Font.ttf(bold),
-        ),
+        theme: ThemeData.withFont(base: Font.ttf(base), bold: Font.ttf(bold)),
         build: (context) {
           return Column(
             children: [
               _head(logo),
 
               _chillerTable(
-                  report, checklist, detail, readdata, checkdata, withComment),
+                report,
+                checklist,
+                detail,
+                readdata,
+                checkdata,
+                withComment,
+              ),
               // if (!full && checklist != Checklist.chi)
               //   _serviceReportsTable(reports, checklist),
               if (!withComment)
-                Text(
-                  'Page 1 of 2',
-                  style: const TextStyle(
-                    fontSize: 6,
-                  ),
-                ),
+                Text('Page 1 of 2', style: const TextStyle(fontSize: 6)),
 
               Text(
                 'This is a computer generated document. No signature is required.',
-                style: const TextStyle(
-                  fontSize: 6,
-                ),
+                style: const TextStyle(fontSize: 6),
               ),
             ],
           );
@@ -663,10 +738,7 @@ class Pdf {
         Page(
           pageFormat: PdfPageFormat.a4,
           orientation: PageOrientation.portrait,
-          theme: ThemeData.withFont(
-            base: Font.ttf(base),
-            bold: Font.ttf(bold),
-          ),
+          theme: ThemeData.withFont(base: Font.ttf(base), bold: Font.ttf(bold)),
           build: (context) {
             return Column(
               children: [
@@ -689,21 +761,14 @@ class Pdf {
 
                 _commentBox(report.comment, height: (lin + 1) * 16.0),
                 SizedBox(height: 5),
-                Text(
-                  'Page 2 of 2',
-                  style: const TextStyle(
-                    fontSize: 6,
-                  ),
-                ),
+                Text('Page 2 of 2', style: const TextStyle(fontSize: 6)),
                 SizedBox(height: 5),
 
                 // if (!full && checklist != Checklist.chi)
                 //   _serviceReportsTable(reports, checklist),
                 Text(
                   'This is a computer generated document. No signature is required.',
-                  style: const TextStyle(
-                    fontSize: 6,
-                  ),
+                  style: const TextStyle(fontSize: 6),
                 ),
               ],
             );
@@ -713,8 +778,14 @@ class Pdf {
     }
   }
 
-  _chillerTable(Report report, List<ChecklistItem> checklist, detail, readdata,
-      checkdata, withComment) {
+  _chillerTable(
+    Report report,
+    List<ChecklistItem> checklist,
+    detail,
+    readdata,
+    checkdata,
+    withComment,
+  ) {
     return Column(
       children: [
         Padding(
@@ -739,29 +810,24 @@ class Pdf {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: _detailTable(
-                readdata,
-                {
-                  0: const FlexColumnWidth(7),
-                  1: const FlexColumnWidth(2),
-                },
-              ),
+              child: _detailTable(readdata, {
+                0: const FlexColumnWidth(7),
+                1: const FlexColumnWidth(2),
+              }),
             ),
             SizedBox(width: 5),
             Expanded(
               child: Column(
                 children: [
-                  _detailTable(
-                    checkdata,
-                    {
-                      0: const FlexColumnWidth(7),
-                      1: const FlexColumnWidth(2),
-                    },
-                  ),
+                  _detailTable(checkdata, {
+                    0: const FlexColumnWidth(7),
+                    1: const FlexColumnWidth(2),
+                  }),
                   SizedBox(height: 10),
                   _commentBox(
-                      withComment ? report.comment : 'Comment at Page 2',
-                      height: 200.0),
+                    withComment ? report.comment : 'Comment at Page 2',
+                    height: 200.0,
+                  ),
                 ],
               ),
             ),
@@ -774,8 +840,13 @@ class Pdf {
     );
   }
 
-  _reportTable(Report report, List<ChecklistItem> checklist, detail, data,
-      bool comment) {
+  _reportTable(
+    Report report,
+    List<ChecklistItem> checklist,
+    detail,
+    data,
+    bool comment,
+  ) {
     return Column(
       children: [
         Text(
@@ -803,13 +874,7 @@ class Pdf {
         SizedBox(height: 5),
         // _fullTable(),
         if (comment) _commentBox(report.comment),
-        if (!comment)
-          Text(
-            'Page 1 of 2',
-            style: const TextStyle(
-              fontSize: 6,
-            ),
-          ),
+        if (!comment) Text('Page 1 of 2', style: const TextStyle(fontSize: 6)),
       ],
     );
   }
@@ -827,18 +892,14 @@ class Pdf {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.3),
-                ),
+                decoration: BoxDecoration(border: Border.all(width: 0.3)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Reported By : '),
                     SizedBox(height: 3),
                     Text(report.by),
-                    Text(
-                      Format.epochToString(report.date),
-                    ),
+                    Text(Format.epochToString(report.date)),
                     // SizedBox(height: 20),
                   ],
                 ),
@@ -847,18 +908,14 @@ class Pdf {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.3),
-                ),
+                decoration: BoxDecoration(border: Border.all(width: 0.3)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Checked By : '),
                     SizedBox(height: 3),
                     Text(report.checkBy ?? ''),
-                    Text(
-                      Format.epochToString(report.checkdate),
-                    ),
+                    Text(Format.epochToString(report.checkdate)),
                     // SizedBox(height: 20),
                   ],
                 ),
@@ -881,20 +938,26 @@ class Pdf {
             padding: const EdgeInsets.symmetric(vertical: 1, horizontal: 2),
             child: Text(
               cell.toString(),
+              textAlign: (cell.toString() == '/' || cell.toString() == 'X')
+                  ? TextAlign.center
+                  : TextAlign.start,
               style: TextStyle(
-                color:
-                    cell.toString() == 'Fail' ? PdfColors.red : PdfColors.black,
+                color: cell.toString() == 'X'
+                    ? PdfColors.red
+                    : PdfColors.black,
               ),
             ),
           ),
         );
       }
 
-      children.add(TableRow(
-        children: tableRow,
-        // repeat: rowNum < headerCount,
-        // decoration: decoration,
-      ));
+      children.add(
+        TableRow(
+          children: tableRow,
+          // repeat: rowNum < headerCount,
+          // decoration: decoration,
+        ),
+      );
       // rowNum++;
     }
     return children;
@@ -910,9 +973,7 @@ class Pdf {
       ),
 
       child: Table(
-        border: TableBorder.all(
-          width: 0.3,
-        ),
+        border: TableBorder.all(width: 0.3),
         columnWidths: columnWidth,
         children: _tableRow(data),
       ),
@@ -957,10 +1018,7 @@ class Pdf {
           padding: const EdgeInsets.only(left: 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text('Comment : '),
-              Text(comment),
-            ],
+            children: [Text('Comment : '), Text(comment)],
           ),
         ),
       ),
@@ -1099,11 +1157,7 @@ class Pdf {
       // height: 100,
       child: Row(
         children: [
-          Container(
-            width: 45,
-            height: 45,
-            child: SvgImage(svg: logo),
-          ),
+          Container(width: 45, height: 45, child: SvgImage(svg: logo)),
           SizedBox(width: 20),
           DefaultTextStyle(
             style: const TextStyle(fontSize: 6),
@@ -1112,13 +1166,11 @@ class Pdf {
               children: [
                 Text(
                   'PINTAR ENGINEERING SDN BHD ( 1424036-K )',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 Text(
-                    'M9-3, Beverly Hills Phase 1, Jalan Bundusan Penampang, 88300 Kota Kinabalu Sabah'),
+                  'M9-3, Beverly Hills Phase 1, Jalan Bundusan Penampang, 88300 Kota Kinabalu Sabah',
+                ),
                 Text('Email : keepintar@gmail.com'),
               ],
             ),

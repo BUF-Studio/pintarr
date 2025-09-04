@@ -1,31 +1,24 @@
-import 'dart:convert';
-import 'dart:io';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:pintarr/content/report/main/monthlyReport.dart';
 import 'package:pintarr/content/report/main/uncheckReport.dart';
-import 'package:pintarr/model/checklist.dart';
-import 'package:pintarr/model/client.dart';
-import 'package:pintarr/model/report.dart';
-import 'package:pintarr/model/type.dart';
-import 'package:pintarr/service/controller/reportController.dart';
-import 'package:pintarr/service/fire/database.dart';
-import 'package:pintarr/widget/button.dart';
-import 'package:provider/provider.dart';
+// import 'package:pintarr/model/checklist.dart';
+// import 'package:pintarr/model/client.dart';
+// import 'package:pintarr/model/report.dart';
+// import 'package:pintarr/service/controller/reportController.dart';
+// import 'package:pintarr/service/fire/database.dart';
+// import 'package:provider/provider.dart';
 
 class MainReport extends StatelessWidget {
   const MainReport({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Database database = Provider.of<Database>(context);
-    ReportsController reportsController =
-        Provider.of<ReportsController>(context);
-    Client client = Provider.of<Client>(context);
-    List<Checklist> checklists = Provider.of<List<Checklist>>(context);
-    List<Report> reports = Provider.of<List<Report>>(context);
+    // Database database = Provider.of<Database>(context);
+    // ReportsController reportsController =
+    //     Provider.of<ReportsController>(context);
+    // Client client = Provider.of<Client>(context);
+    // List<Checklist> checklists = Provider.of<List<Checklist>>(context);
+    // List<Report> reports = Provider.of<List<Report>>(context);
     return Column(
       children: [
         // Button(

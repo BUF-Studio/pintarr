@@ -4,13 +4,11 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 
-import 'package:path_provider/path_provider.dart';
 import 'package:pintarr/model/agent.dart';
 import 'package:pintarr/model/client.dart';
 import 'package:pintarr/model/report.dart';
 import 'package:pintarr/service/controller/filePath.dart';
 import 'package:pintarr/service/fire/database.dart';
-import 'package:pintarr/service/realTime.dart';
 import 'package:rxdart/subjects.dart';
 
 class ReportsController {
