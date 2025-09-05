@@ -18,6 +18,7 @@
 	<array>
 		<string>$(AppIdentifierPrefix)com.buf.pintarr</string>
 		<string>$(AppIdentifierPrefix)com.buf.pintarrr</string>
+		<string>$(AppIdentifierPrefix)com.buf.ppintarr</string>
 	</array>
 </dict>
 </plist>
