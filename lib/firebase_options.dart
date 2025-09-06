@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '679013999464',
     projectId: 'pintar-care-v3-5f8c4',
     storageBucket: 'pintar-care-v3-5f8c4.firebasestorage.app',
-    iosBundleId: 'com.buf.pintarr',
+    iosBundleId: 'com.buf.ppintarr',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
